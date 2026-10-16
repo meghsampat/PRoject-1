@@ -1,0 +1,262 @@
+{
+    "ready_for_local_demo":  true,
+    "ready_for_final_public_launch":  false,
+    "scope_id":  "core_consumables_v1",
+    "policy_fingerprint":  "eb81f0cfc689157dabdf33f8cafb6e4f2fe17a57094b3a1134ddd48ac42a894c",
+    "master_sha256":  "329be63276f9ef4ddd3f9f70dd2e4646d155f7a9c12cfe329158b94a4b074f58",
+    "verification":  {
+                         "unit_tests_passed":  81,
+                         "processed_tool_judge_flows_passed":  8,
+                         "streamlit_demo_flows_passed":  8,
+                         "saved_rfm_segmentation_validation":  "PASS",
+                         "promotion_preparation_validation":  "PASS",
+                         "category_intelligence_validation":  "PASS",
+                         "category_weight_stability_gate_passed":  true,
+                         "saved_direct_forecasting_validation":  "PASS",
+                         "forecast_model_reload_reproduced":  true,
+                         "recommendation_arithmetic_validation":  "PASS",
+                         "week_diagnosis_validation":  "PASS",
+                         "consolidated_ml_evaluation_validation":  "PASS",
+                         "frozen_processed_schema_count":  28,
+                         "cloud_cli_archive_and_version_verified":  true,
+                         "pip_dependencies_check":  "PASS",
+                         "conversational_dashboard_validation":  "PASS",
+                         "natural_chat_flows_passed":  9,
+                         "short_and_detailed_answers_validation":  "PASS"
+                     },
+    "remaining":  [
+                      "Python 3.11 target environment",
+                      "Human plausibility review of both recommendation top-ten lists",
+                      "Actual Gemini model-access proof: Google Cloud project ID and ADC sign-in required",
+                      "ADK integration and GCP deployment",
+                      "Household-query and decomposition tools",
+                      "Final evaluation and Review 3 field mapping",
+                      "Segment business usefulness review and temporal/sample stability",
+                      "Category business usefulness review; promotion associations unavailable for the scored cohort"
+                  ],
+    "segmentation":  {
+                         "households":  2492,
+                         "chosen_k":  2,
+                         "sampled_silhouette":  0.3985562677882751,
+                         "mean_initialization_ari":  1,
+                         "business_usefulness_review_complete":  false
+                     },
+    "category_intelligence":  {
+                                  "all_categories":  229,
+                                  "scored_categories":  100,
+                                  "source_rows_scanned":  36786524,
+                                  "promotion_sales_key_coverage":  0.21613196396467982,
+                                  "promotion_associations_available":  0,
+                                  "promotion_component_available":  false,
+                                  "missing_promotion_normalized_value":  0.5,
+                                  "weight_sensitivity_runs":  100,
+                                  "minimum_spearman_all":  0.9914160643911752,
+                                  "minimum_spearman_baseline_top20":  0.9668080511311296,
+                                  "minimum_top20_overlap":  0.9,
+                                  "business_usefulness_review_complete":  false
+                              },
+    "next_technical_step":  "Supply actual Google Cloud project ID and sign in with ADC, then run the fixed-prompt Gemini access proof; docs/cloud_setup.md",
+    "forecasting":  {
+                        "forecastable_categories":  201,
+                        "direct_horizons":  [
+                                                1,
+                                                2,
+                                                3,
+                                                4
+                                            ],
+                        "eligibility_cutoff":  71,
+                        "validation_folds":  [
+                                                 {
+                                                     "fold":  1,
+                                                     "start":  72,
+                                                     "end":  77
+                                                 },
+                                                 {
+                                                     "fold":  2,
+                                                     "start":  78,
+                                                     "end":  83
+                                                 },
+                                                 {
+                                                     "fold":  3,
+                                                     "start":  84,
+                                                     "end":  89
+                                                 }
+                                             ],
+                        "test_target_block":  [
+                                                  90,
+                                                  101
+                                              ],
+                        "evaluation_training_cutoff":  89,
+                        "production_training_cutoff":  101,
+                        "test_origins_per_horizon":  {
+                                                         "1":  12,
+                                                         "2":  11,
+                                                         "3":  10,
+                                                         "4":  9
+                                                     },
+                        "test_prediction_pairs":  8442,
+                        "chosen_methods":  {
+                                               "1":  "Gradient boosting",
+                                               "2":  "Gradient boosting",
+                                               "3":  "Seasonal naive (52 weeks)",
+                                               "4":  "Seasonal naive (52 weeks)"
+                                           },
+                        "model_wins_against_all_baselines_categories_by_horizon":  {
+                                                                                       "1":  87,
+                                                                                       "2":  81,
+                                                                                       "3":  82,
+                                                                                       "4":  71
+                                                                                   },
+                        "four_week_total_wape_pct":  {
+                                                         "Gradient boosting":  10.441240472599498,
+                                                         "Naive":  17.82845134380046,
+                                                         "Seasonal naive (52 weeks)":  10.161629047229303,
+                                                         "Four-week moving average (fixed origin)":  12.3412344818239,
+                                                         "Validation-selected forecast":  9.069339628095197
+                                                     },
+                        "independent_validation":  "PASS",
+                        "future_accuracy_guaranteed":  false
+                    },
+    "recommendations":  {
+                            "eligible_counts":  {
+                                                    "forecast":  100,
+                                                    "segment":  100
+                                                },
+                            "candidate_rows":  200,
+                            "weights":  {
+                                            "forecast":  {
+                                                             "forecast_growth":  0.6,
+                                                             "product_score":  0.4
+                                                         },
+                                            "segment":  {
+                                                            "target_affinity":  0.6,
+                                                            "target_momentum":  0.4
+                                                        }
+                                        },
+                            "target_segments":  [
+                                                    {
+                                                        "segment":  1,
+                                                        "households":  1355,
+                                                        "observed_spend_index":  1.8347939718096449
+                                                    }
+                                                ],
+                            "target_households":  1355,
+                            "as_of_week":  102,
+                            "forecast_origin_week":  101,
+                            "forecast_weeks":  [
+                                                   102,
+                                                   103,
+                                                   104,
+                                                   105
+                                               ],
+                            "recent_weeks":  [
+                                                 98,
+                                                 99,
+                                                 100,
+                                                 101
+                                             ],
+                            "previous_weeks":  [
+                                                   94,
+                                                   95,
+                                                   96,
+                                                   97
+                                               ],
+                            "partial_forecast_overlap":  [
+                                                             102
+                                                         ],
+                            "top10_overlap_count":  1,
+                            "shared_top10_categories":  [
+                                                            "DIAPERS \u0026 DISPOSABLES"
+                                                        ],
+                            "priority_counts":  {
+                                                    "forecast":  {
+                                                                     "review":  53,
+                                                                     "maintain":  40,
+                                                                     "promote":  7
+                                                                 },
+                                                    "segment":  {
+                                                                    "maintain":  80,
+                                                                    "review":  20
+                                                                }
+                                                },
+                            "available_promotion_associations":  0,
+                            "technical_validation":  "PASS",
+                            "business_usefulness_review_complete":  false,
+                            "recommendation_accuracy_evaluated":  false,
+                            "arbitration_implemented":  false,
+                            "campaign_execution_authorized":  false
+                        },
+    "updated_client_date":  "2026-10-13",
+    "week_diagnosis":  {
+                           "major_departments":  9,
+                           "revenue_change_pct":  23.503030802551873,
+                           "cause_verified":  false,
+                           "top_store_positive_delta_share":  0.033341209046522408,
+                           "technical_validation":  "PASS",
+                           "records_retained_without_adjustment":  true,
+                           "positive_eligible_stores":  75,
+                           "eligible_stores":  115,
+                           "week":  92,
+                           "positive_major_departments":  8
+                       },
+    "ml_evaluation":  {
+                          "schema_manifest":  "outputs/processed_schema_manifest.json",
+                          "processed_schema_count":  28,
+                          "business_usefulness_review_complete":  false,
+                          "technical_validation":  "PASS",
+                          "report":  "outputs/evaluation_ml.md"
+                      },
+    "cloud_access":  {
+                         "cli_installed_locally":  true,
+                         "billing_verified":  false,
+                         "cli_version":  "588.0.0",
+                         "cloud_call_verified":  false,
+                         "google_genai_version":  "2.30.0",
+                         "service_api_verified":  false,
+                         "setup_guide":  "docs/cloud_setup.md",
+                         "preflight_status":  "NEEDS_CONFIGURATION",
+                         "deployed":  false,
+                         "configuration":  {
+                                               "project_id":  null,
+                                               "location":  "global",
+                                               "model":  "gemini-3.5-flash",
+                                               "deployment_region":  "us-central1"
+                                           },
+                         "missing":  [
+                                         "Google Cloud project ID",
+                                         "Application Default Credentials sign-in"
+                                     ],
+                         "adk_integrated":  false,
+                         "optional_chat_adapter_implemented":  true,
+                         "actual_cloud_chat_verified":  false
+                     },
+    "conversation":  {
+                         "connected_gemini_enabled_by_default":  false,
+                         "unrestricted_llm_prose_enabled":  false,
+                         "history_scope":  "Current browser session and validated data/week scope",
+                         "validation_report":  "outputs/chat_validation.json",
+                         "automatic_campaign_execution":  false,
+                         "remembered_followups":  true,
+                         "evidence_derived_suggestions":  true,
+                         "actual_cloud_chat_verified":  false,
+                         "input_character_limit":  1500,
+                         "openai_gpt_connected":  false,
+                         "current_mode":  "local",
+                         "natural_chat_flows_passed":  9,
+                         "implemented":  true,
+                         "maximum_complete_turns":  24,
+                         "limitation":  "Live Gemini needs matching project/ADC/access proof; model selection cannot introduce new facts.",
+                         "answer_presentation":  {
+                                                     "detailed_explanation":  true,
+                                                     "charts_collapsed_by_default":  true,
+                                                     "version":  2,
+                                                     "remembered_length_followups":  true,
+                                                     "short_answer":  true,
+                                                     "explicit_next_steps":  true,
+                                                     "default_preference":  "Short + details",
+                                                     "copy_and_markdown_download":  true,
+                                                     "views_match_validated_evidence":  true,
+                                                     "forecast_baseline_comparisons_retained":  true
+                                                 }
+                     }
+}

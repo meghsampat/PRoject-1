@@ -1,0 +1,20 @@
+{
+  "status": "NEEDS_CONFIGURATION",
+  "configuration": {
+    "project_id": null,
+    "location": "global",
+    "model": "gemini-3.5-flash",
+    "deployment_region": "us-central1"
+  },
+  "google_genai_version": "2.30.0",
+  "credential_hint": "not_observed",
+  "cli_available_locally": true,
+  "missing": [
+    "Google Cloud project ID",
+    "Application Default Credentials sign-in"
+  ],
+  "cloud_call_verified": false,
+  "billing_verified": false,
+  "service_api_verified": false,
+  "note": "Local presence checks do not verify credentials, billing, permissions or model availability. Credentials/tokens are never printed. No resources are created and no data is uploaded by preflight."
+}

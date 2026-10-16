@@ -1,0 +1,3 @@
+# Retired workflow. Not needed for the active local-only app; use requirements.txt.
+# Optional cloud access proof; local deterministic analytics remain separate.
+google-genai==2.30.0

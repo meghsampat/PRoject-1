@@ -1,0 +1,107 @@
+{
+    "version":  "2.0.0",
+    "tasks":  [
+                  {
+                      "label":  "FMCG: Check local setup",
+                      "type":  "process",
+                      "command":  "${workspaceFolder}/.venv/Scripts/python.exe",
+                      "args":  [
+                                   "${workspaceFolder}/scripts/run_local.py",
+                                   "--check"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  },
+                      "problemMatcher":  [
+
+                                         ],
+                      "presentation":  {
+                                           "reveal":  "silent",
+                                           "panel":  "dedicated"
+                                       }
+                  },
+                  {
+                      "label":  "FMCG: Start local dashboard (terminal)",
+                      "type":  "process",
+                      "command":  "${workspaceFolder}/.venv/Scripts/python.exe",
+                      "args":  [
+                                   "${workspaceFolder}/scripts/run_local.py"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  },
+                      "problemMatcher":  [
+
+                                         ],
+                      "presentation":  {
+                                           "reveal":  "always",
+                                           "panel":  "dedicated"
+                                       }
+                  },
+                  {
+                      "label":  "FMCG: Run tests",
+                      "type":  "process",
+                      "command":  "${workspaceFolder}/.venv/Scripts/python.exe",
+                      "args":  [
+                                   "-m",
+                                   "unittest",
+                                   "discover",
+                                   "-s",
+                                   "tests",
+                                   "-v"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  },
+                      "group":  {
+                                    "kind":  "test",
+                                    "isDefault":  true
+                                },
+                      "problemMatcher":  [
+
+                                         ]
+                  },
+                  {
+                      "label":  "FMCG: Validate dashboard on real data",
+                      "type":  "process",
+                      "command":  "${workspaceFolder}/.venv/Scripts/python.exe",
+                      "args":  [
+                                   "${workspaceFolder}/scripts/validate_real_data.py"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  },
+                      "problemMatcher":  [
+
+                                         ]
+                  },
+                  {
+                      "label":  "FMCG: Build Review III presentation",
+                      "problemMatcher":  [
+
+                                         ],
+                      "command":  "${workspaceFolder}/.venv/Scripts/python.exe",
+                      "type":  "process",
+                      "args":  [
+                                   "${workspaceFolder}/scripts/build_review3.py"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  }
+                  },
+                  {
+                      "label":  "FMCG: Validate Review III presentation",
+                      "problemMatcher":  [
+
+                                         ],
+                      "command":  "${workspaceFolder}/.venv/Scripts/python.exe",
+                      "type":  "process",
+                      "args":  [
+                                   "${workspaceFolder}/scripts/validate_review3.py"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  }
+                  }
+              ]
+}

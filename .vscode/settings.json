@@ -1,0 +1,16 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.testing.unittestEnabled": true,
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestArgs": [
+    "-s",
+    "tests",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "workbench.browser.openLocalhostLinks": true,
+  "workbench.browser.newTabPlacement": "sideGroup",
+  "workbench.browser.dataStorage": "workspace"
+}
